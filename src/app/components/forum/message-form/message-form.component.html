@@ -1,0 +1,14 @@
+<form class="form" [formGroup]="forumForm" (ngSubmit)="onSubmit()">
+  <div *ngIf="submitted && controls.title.errors" class="invalid-feedback">
+    <label *ngIf="controls.title.errors.required">Title is required</label>
+  </div>
+  <input type="text" formControlName="title" placeholder="Заголовок" class="form__input"
+         [ngClass]="{ 'is-invalid': submitted && controls.title.errors }" />
+  <div *ngIf="submitted && controls.body.errors" class="invalid-feedback">
+    <label *ngIf="controls.body.errors.required">Body is required</label>
+  </div>
+  <textarea formControlName="body" placeholder="Текст сообщения" class="form__text"
+            [ngClass]="{ 'is-invalid': submitted && controls.body.errors }">
+  </textarea>
+  <button [disabled]="loading" class="form__btn">Отправить</button>
+</form>

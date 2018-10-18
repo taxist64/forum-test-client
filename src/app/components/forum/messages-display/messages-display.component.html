@@ -1,0 +1,8 @@
+<div class="messages">
+  <div *ngFor="let message of messages">
+    <div class="message">
+      <p class="messages__title">{{message.title}}</p>
+      <p class="messages__content ">{{message.body}}</p></div>
+  </div>
+  <p class="messages__count "><strong>Количество сообщений:</strong>{{messages?.length}}</p></div>
+
